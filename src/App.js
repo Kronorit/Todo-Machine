@@ -6,9 +6,9 @@ import { CreateTodoButton } from './CreateTodoButton';
 import React from 'react';
 
 const defaultTodos = [
-  {text:'Córtar cebolla', completed: false},
+  {text:'Córtar cebolla', completed: !false},
   {text:'Cortar manzana', completed: true},
-  {text:'Cortar Pera', completed: false},
+  {text:'Cortar Pera', completed: !false},
   {text:'Cortar Sandía', completed: true},
 ]
 
