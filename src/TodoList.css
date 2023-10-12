@@ -1,0 +1,10 @@
+ul {
+  padding: 2rem 5rem;
+  width: 100%;
+}
+
+@media (max-width: 720px) {
+  ul {
+    padding: 2rem 2rem;
+  }
+}
