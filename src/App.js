@@ -6,7 +6,7 @@ import { CreateTodoButton } from './CreateTodoButton';
 import React from 'react';
 
 const defaultTodos = [
-  {text:'Cortar cebolla', completed: false},
+  {text:'Córtar cebolla', completed: false},
   {text:'Cortar manzana', completed: true},
   {text:'Cortar Pera', completed: false},
   {text:'Cortar Sandía', completed: true},
@@ -21,17 +21,27 @@ const defaultTodos = [
   React.Fragment devuelve un fragmento de react.
 */
 function App() {
+  const [todos, setTodos] = React.useState(defaultTodos);
+  const [searchValue, setSearchValue] = React.useState("");
+
+  const uncompletedTodos = todos.filter((todo) => {if(!todo.completed) return todo})
+  const completedTodos = todos.filter((todo) => {if(todo.completed) return todo});
+  const totalTodos = todos.length;
   return (
     <React.Fragment>
 
-      <TodoCounter completed={5} total={25} /> {/* Componenetes de otro archivo insertados como elementos. */}
-      <TodoSearch />
+      <TodoCounter 
+        completed={completedTodos.length} 
+        total={totalTodos} /> {/* Componenetes de otro archivo insertados como elementos. */}
+      <TodoSearch 
+        searchValue={searchValue} 
+        setSearchValue ={setSearchValue}/>
 
-      <TodoList>
-        {defaultTodos.map((todo)=>{
-          return <TodoItem key={todo.text} text={todo.text} completed={todo.completed}/> /*todos los props deberían tener una key*/
-        })}
-      </TodoList>
+      <TodoList 
+        completedTodos={completedTodos} 
+        uncompletedTodos={uncompletedTodos} 
+        setTodos={setTodos} 
+        searchValue={searchValue}/>
 
       <CreateTodoButton />
 
