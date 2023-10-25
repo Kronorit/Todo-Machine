@@ -1,0 +1,43 @@
+import { TodoCounter } from '../TodoCounter';
+import { TodoSearch } from '../TodoSearch';
+import { TodoList } from '../TodoList';
+import { CreateTodoButton } from '../CreateTodoButton';
+import { TodoContext } from '../TodoContext';
+import React from 'react';
+import { LoadingTodos } from '../LoadingTodos';
+import { ErrorTodos } from '../ErrorTodos';
+
+function AppUI() {
+  const {completedTodos, 
+         uncompletedTodos, 
+         searchValue, 
+         completeTodo,
+         deleteTodo,
+         loading,
+         error} = React.useContext(TodoContext);
+
+  return (
+    <>
+      {loading && <LoadingTodos/>}
+      {!loading && error && <ErrorTodos/>}
+      {!loading && !error && <>
+        <TodoCounter/>
+  
+        <TodoSearch/>
+
+        <TodoList 
+          completedTodos={completedTodos} 
+          uncompletedTodos={uncompletedTodos} 
+          searchValue={searchValue}
+          onComplete={completeTodo}
+          onDelete={deleteTodo}
+          loading = {loading}
+          error = {error}/>
+    
+        <CreateTodoButton />
+      </>}
+    </>
+  );
+}
+
+export { AppUI }

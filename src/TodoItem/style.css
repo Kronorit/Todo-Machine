@@ -1,38 +1,41 @@
 .todo {
   margin-top: 1.4rem;
-  color: black;
+  color: var(--dark-gray);
   list-style: none;
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 1.4rem;
   border-radius: 10px;
-  box-shadow: 0px 0px 10px 1px #a5a4a4;
   border: 2px solid #52515115;
+  background-color: var(--dark-gray);
   transition: box-shadow, border .2s ease;
 }
 
 .todo:hover {
-  border: 2px solid #ff7514;
-  box-shadow: 0px 0px 10px 1px #ff7514;
+  border: 2px solid var(--main-orange);
+  box-shadow: 0px 0px 10px 1px var(--main-orange);
 }
 
 .todo p {
   display: inline-block;
   font-weight: bold;
+  color: var(--font-color);
 }
 
 .todo .todo_check {
   transition: transform .2s ease;
+  color: var(--font-color);
 }
 
 .todo .todo_check:hover {
-  color: #ff7514;
+  color: var(--main-orange);
   transform: scale(1.3, 1.3);
 }
 
 .todo .todo_delete-button {
   transition: transform .2s ease;
+  color: var(--font-color);
 }
 
 .todo .todo_delete-button:hover {
@@ -45,5 +48,5 @@
 }
 
 .todo-completed .todo_check {
-  color: #ff7514;
+  color: var(--main-orange);
 }

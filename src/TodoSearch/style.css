@@ -1,0 +1,22 @@
+.search-bar {
+  margin-top: 1.4rem;
+  padding: 1rem;
+  font-size: 18px;
+  border-radius: 10px;
+  border: 2px solid var(--lighter-gray);
+  background-color: var(--lighter-gray);
+  transition: .2s ease all;
+  color: var(--font-color);
+  outline: none;
+}
+
+.search-bar::placeholder{
+  text-align: center;
+  color: #ffffff8e;
+}
+
+.search-bar:focus {
+  outline: none;
+  border: 2px solid var(--main-orange);
+  box-shadow: var(--main-orange) 0 0 10px;
+}

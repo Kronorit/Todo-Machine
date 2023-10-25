@@ -2,12 +2,12 @@
   position: fixed;
   width: 56px;
   height: 56px;
-  background-color: #ff7514;
+  background-color: var(--main-orange);
   top: 20px;
   right: 20px;
   border-radius: 100%;
   border: none;
-  color: white;
+  color: var(--font-color);
   transition: .2s ease all;
   cursor: pointer;
 }

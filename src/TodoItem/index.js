@@ -1,4 +1,8 @@
-import './TodoItem.css';
+import './style.css';
+
+function animation_deletingTodo(element) {
+
+}
 
 function TodoItem(props) {
     return (

@@ -3,12 +3,19 @@
   padding: 0;
   box-sizing: border-box;
   font-family: 'Montserrat', sans-serif;
-  font-size: 16px;
+}
+
+:root {
+  --dark-gray: #1f1e1e;
+  --lighter-gray: #202020;
+  --main-orange: #ff7514;
+  --font-color: white;
 }
 
 body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: var(--dark-gray);
 }
 
 code {
