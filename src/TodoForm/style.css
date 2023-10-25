@@ -1,0 +1,80 @@
+.todoForm-container {
+  top: 0;
+  left: 0;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: #0000007e;
+  z-index: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.todoForm{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: var(--font-color);
+  font-weight: bolder;
+  background-color: var(--lighter-gray);
+  width: 500px;
+  border-radius: 20px;
+  padding: 24px;
+}
+
+.todoForm__text {
+  margin-top: 20px;
+  width: 100%;
+  height: 96px;
+  background-color: var(--dark-gray);
+  border: 1px solid #0000002f;
+  text-align: center;
+  color: var(--font-color);
+  font-size: 20px;
+  transition: .2s ease all;
+  resize: none;
+}
+
+.todoForm__text:focus {
+  outline: none;
+  border: 1px solid var(--main-orange);
+  box-shadow: var(--main-orange) 0 0 10px;
+}
+
+.todoForm__buttons-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 80%;
+  margin-top: 20px;
+}
+
+.todoForm__button {
+  color: var(--font-color);
+  border-radius: 5px;
+  font-weight: bolder;
+  padding: 5px 10px;
+}
+
+.todoForm__save-button {
+  background-color: var(--main-orange);
+  border: 1px solid var(--main-orange);
+  transition: .2s ease all;
+}
+
+.todoForm__save-button:hover {
+  box-shadow: var(--main-orange) 0 0 10px 3px;
+}
+
+
+.todoForm__cancel-button {
+  background-color: red;
+  border: 1px solid red;
+  transition: .2s ease all;
+}
+
+.todoForm__cancel-button:hover {
+  box-shadow: red 0 0 10px 3px;
+}

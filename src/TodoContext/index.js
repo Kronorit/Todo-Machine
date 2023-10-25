@@ -8,10 +8,18 @@ const API = 'todos';
 function TodoProvider({ children }) {
   const {item: todos, saveItem: setTodos, loading, error} = useLocalStorage(API, []);
   const [searchValue, setSearchValue] = React.useState("");
+  const [openModal, setOpenModal] = React.useState(false);
 
   const uncompletedTodos = todos.filter((todo) => !todo.completed);
   const completedTodos = todos.filter((todo) => todo.completed);
   const totalTodos = todos.length;
+
+  function addTodo(text) {
+    console.log(text);
+    const newTodos = [...todos];
+    newTodos.push({text, completed:false});
+    setTodos(newTodos);
+  }
 
   function completeTodo(text) {
     const newTodos = [...todos];
@@ -27,15 +35,20 @@ function TodoProvider({ children }) {
     setTodos(newTodos);
   }
   return (  
-    <TodoContext.Provider value={{loading,
-                                 error,
-                                 completedTodos,
-                                 uncompletedTodos,
-                                 totalTodos,
-                                 searchValue,
-                                 setSearchValue,
-                                 completeTodo,
-                                 deleteTodo}}>
+    <TodoContext.Provider value={{
+      loading,
+      error,
+      completedTodos,
+      uncompletedTodos,
+      totalTodos,
+      searchValue,
+      setSearchValue,
+      completeTodo,
+      deleteTodo,
+      openModal,
+      setOpenModal,
+      addTodo
+    }}>
       {children}
     </TodoContext.Provider>
   );
